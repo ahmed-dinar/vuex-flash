@@ -1,0 +1,12 @@
+
+.btn, .btn-sm, .btn-md, .btn-lg{
+  border-radius: 2px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.same-size{
+  width: 250px;
+}
