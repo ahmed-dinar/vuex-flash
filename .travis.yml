@@ -7,5 +7,7 @@ before_script:
   - npm run build
 script:
   - npm run unit
+after_success:
+  - npm run coverall
 notifications:
   email: false

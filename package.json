@@ -10,7 +10,7 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js src test/unit/**/*.js test/e2e/**/*.js",
     "lint-fix": "eslint --fix --ext .js src test/unit/** test/e2e/**",
-    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | coveralls"
+    "coverall": "cat ./test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
     "cross-env": "^5.0.1",
     "es6-promise": "^4.1.1",
     "eslint": "^4.1.1",

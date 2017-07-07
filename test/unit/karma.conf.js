@@ -4,7 +4,7 @@ module.exports = function(config) {
 
   config.set({
     browsers: ['PhantomJS'],
-    reporters: ['spec', 'coverage', 'coveralls'],
+    reporters: ['spec', 'coverage'],
     frameworks: ['mocha', 'chai', 'sinon-chai'],
     files: [
       '../../src/**/*',

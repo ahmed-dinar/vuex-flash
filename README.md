@@ -1,5 +1,5 @@
 <h1 align="center">
-  Vuex Flash
+Vuex Flash
 </h1>
 <p align="center">
 Flash message component for Vue.js within Vuex
