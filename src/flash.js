@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2017 Ahmed Dinar
- * 05/07/2017
+ *
  */
 
 
@@ -101,7 +101,8 @@ export default function(
       let flashes = this.getFlash;
 
       if( !flashes ){
-        throw new Error('[vuex-flash error] flash store undefined.Make sure you have register the createFlashStore plugin in your vuex store.');
+        console.error('[vuex-flash error] flash store undefined.Make sure you have register the createFlashStore plugin in your vuex store.');
+        return;
       }
 
       if( flashes.message ){

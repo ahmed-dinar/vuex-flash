@@ -3,7 +3,6 @@ import flash from './flash';
 
 export { createFlashStore } from './FlashStore';
 
-
 export default {
 
   install(Vue, config = {}) {
