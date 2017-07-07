@@ -8,7 +8,7 @@ Flash message component for Vue.js within Vuex
 <p align="center">
   <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue.js-2.x-brightgreen.svg?style=flat-square&maxAge=604800" alt="Vue.js 2.x compatible"></a>
   <a href="https://vuex.vuejs.org/en/"><img src="https://img.shields.io/badge/vuex-2.x-green.svg?style=flat-square&maxAge=604800" alt="Vuex 2.x compatible"></a>
-  <a href="https://travis-ci.org/ahmed-dinar/vuex-flash"><img src="https://img.shields.io/travis/hmed-dinar/vuex-flash/master.svg?style=flat-square" alt="travis-ci build"></a>
+  <a href="https://travis-ci.org/ahmed-dinar/vuex-flash"><img src="https://img.shields.io/travis/ahmed-dinar/vuex-flash.svg?style=flat-square" alt="travis-ci build"></a>
   <a href="https://coveralls.io/github/ahmed-dinar/vuex-flash?branch=master"><img src="https://img.shields.io/coveralls/hmed-dinar/vuex-flash/master.svg?style=flat-square" alt="coveralls"></a>
   <a href="https://www.npmjs.com/package/vuex-flash"><img src="https://img.shields.io/npm/v/vuex-flash.svg?style=flat-square" alt="npm package"></a>
   <a href="https://david-dm.org/ahmed-dinar/vuex-flash"><img src="https://img.shields.io/david/ahmed-dinar/vuex-flash.svg?style=flat-square" alt="dependency"></a>
