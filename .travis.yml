@@ -1,5 +1,7 @@
 language: node_js
 node_js:
-  - "4"
+  - "6"
+before_install:
+  - npm i -g npm@3.10.10
 notifications:
   email: false
