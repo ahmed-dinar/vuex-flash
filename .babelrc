@@ -8,7 +8,7 @@
     "transform-runtime"
   ],
   "env": {
-    "testing": {
+    "test": {
       "presets": ["es2015", "stage-2"],
       "plugins": ["istanbul"]
     }

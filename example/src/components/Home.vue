@@ -17,7 +17,7 @@
 
     data(){
       return {
-        message: 'Vuex Flash'
+        message: 'Example of Vuex Flash'
       };
     },
 

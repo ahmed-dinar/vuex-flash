@@ -2,18 +2,27 @@
 var path = require('path');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
+var version = require('../package.json').version;
 var baseWebpackConfig = require('./webpack.base.conf');
+
+var banner =
+'/**\n' +
+' * vuex-flash v' + version + '\n' +
+' * https://github.com/ahmed-dinar/vuex-flash\n' +
+' * (c) 2017 Ahmed Dinar\n' +
+' * Licensed under MIT (https://github.com/ahmed-dinar/vuex-flash/blob/master/LICENSE)\n' +
+' */';
 
 process.env.NODE_ENV = 'production';
 
 module.exports = merge(baseWebpackConfig, {
-  entry: {
-    index: './src/index.js',
-  },
+  entry: [
+    './src/index.js',
+  ],
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: 'dist/',
-    filename: '[name].js',
+    filename: 'vuex-flash.min.js',
     library: 'VuexFlash',
     libraryTarget: 'umd'
   },
@@ -27,6 +36,10 @@ module.exports = merge(baseWebpackConfig, {
       compress: {
         warnings: false
       }
+    }),
+    new webpack.BannerPlugin({
+      banner: banner,
+      raw: true
     })
   ]
 });

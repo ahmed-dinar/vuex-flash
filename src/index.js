@@ -1,18 +1,31 @@
 
-import flash from './flash';
-
-export { createFlashStore } from './FlashStore';
+import FlashComponent from './FlashComponent';
 
 export default {
-
   install(Vue, config = {}) {
 
     if( typeof config !== 'object' || Array.isArray(config) ){
       throw new Error('[vuex-flash error] valid option object required');
     }
 
-    let name = config.name || 'FlashMessage';
+    config.namespace = config.namespace || 'FLASH';
 
-    Vue.component(name, flash(config) );
+    /* istanbul ignore next */
+    if( config.mixin ){
+
+      const FLASH_METHOD = config.method || 'flash';
+
+      Vue.mixin({
+        methods: {
+          [FLASH_METHOD] (message) {
+            this.$store.commit(`${config.namespace}/SET_FLASH`, message);
+          }
+        }
+      });
+    }
+
+    Vue.component(config.name || 'FlashMessage', FlashComponent(config) );
   }
 };
+
+export { createFlashStore } from './FlashStore';

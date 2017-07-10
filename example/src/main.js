@@ -1,14 +1,10 @@
 
-
-import 'es6-promise/auto';
-
 import Vue from 'vue';
+import VuexFlash from 'vuex-flash';
 
 import App from './App.vue';
 import router from './router';
 import store from './store';
-
-import VuexFlash from '../src';
 
 Vue.use(VuexFlash);
 

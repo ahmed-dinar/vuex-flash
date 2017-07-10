@@ -21,7 +21,7 @@ module.exports = merge(baseWebpackConfig, {
     hot: true,
     inline: true
   },
-  devtool: '#eval-source-map',
+  devtool: '#cheap-module-eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

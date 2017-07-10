@@ -3,9 +3,11 @@
 
     <h1 style="margin: 120px auto 20px auto;">{{ message }}</h1>
 
-    <flash-message important variant="info" transitionIn="animated tada"></flash-message>
+    <flash-message variant="success" transitionIn="animated swing"></flash-message>
+    <flash-message variant="info" transitionIn="animated lightSpeedIn"></flash-message>
+    <flash-message variant="danger" autoHide transitionIn="animated flipInX" transitionOut="animated flipOutX"></flash-message>
 
-        <br><br>
+    <br><br>
     <router-link class="btn btn-primary btn-sm back-btn" to="/">Go Back Home</router-link>
 
   </div>
@@ -18,7 +20,7 @@
 
     data(){
       return {
-        message: 'In another page with very important flash!'
+        message: 'In another page with multiple flash!'
       };
     },
 

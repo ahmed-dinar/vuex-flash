@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { createFlashStore } from '../..';
+import { createFlashStore } from '../../src';
 
 Vue.use(Vuex);
 

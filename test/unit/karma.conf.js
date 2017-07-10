@@ -4,7 +4,7 @@ module.exports = function(config) {
 
   config.set({
     browsers: ['PhantomJS'],
-    reporters: ['spec', 'coverage'],
+    reporters: ['spec','coverage'],
     frameworks: ['mocha', 'chai', 'sinon-chai'],
     files: [
       '../../src/**/*',
@@ -13,9 +13,9 @@ module.exports = function(config) {
     ],
     exclude: [],
     preprocessors: {
-      '../../src/**/*': ['webpack'],
-      '../../dev/**/*': ['webpack'],
-      './specs/**/*': ['webpack']
+      '../../src/**/*': ['webpack','sourcemap'],
+      '../../dev/**/*': ['webpack','sourcemap'],
+      './specs/**/*': ['webpack','sourcemap']
     },
     webpack: webpackConfig,
     webpackMiddleware: {
@@ -23,19 +23,21 @@ module.exports = function(config) {
       stats: 'errors-only'
     },
     plugins: [
-      'karma-webpack',
-      'karma-mocha',
+      'karma-spec-reporter',
       'karma-chai',
       'karma-sinon-chai',
-      'karma-spec-reporter',
+      'karma-mocha',
       'karma-coverage',
-      'karma-coveralls',
-      'karma-phantomjs-launcher'
+      'karma-phantomjs-launcher',
+      'karma-sourcemap-loader',
+      'karma-webpack'
     ],
+    logLevel: config.LOG_INFO,
     colors: true,
     autoWatch: false,
+    singleRun: true,
     coverageReporter: {
-      dir: './coverage',
+      dir: 'coverage/',
       reporters: [
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' }
