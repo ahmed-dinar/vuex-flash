@@ -1,18 +1,18 @@
 
 import Vue from 'vue';
 import Router from 'vue-router';
+import NProgress from 'nprogress';
 
-import Home from './components/Home';
-import Flash from './components/Flash';
-import AutoHide from './components/AutoHide';
-import Important from './components/Important';
-import Multiple from './components/Multiple';
+import Home from '@/components/Home';
+import Basic from '@/components/Basic';
+import AutoHide from '@/components/AutoHide';
+import Important from '@/components/Important';
+import Multiple from '@/components/Multiple';
 
 Vue.use(Router);
 
 const router = new Router({
-
-  mode: 'history',
+  mode: 'hash',
   routes: [
     {
       path: '/',
@@ -20,9 +20,9 @@ const router = new Router({
       component: Home
     },
     {
-      path: '/flash',
-      name: 'flash',
-      component: Flash
+      path: '/basic',
+      name: 'Basic',
+      component: Basic
     },
     {
       path: '/autohide',
@@ -42,7 +42,15 @@ const router = new Router({
   ]
 });
 
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  next();
+});
 
+router.afterEach((to,from) => {
+  NProgress.done();
+  NProgress.remove();
+});
 
 
 export default router;

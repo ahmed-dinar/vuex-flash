@@ -1,0 +1,156 @@
+
+
+body {
+
+  margin: 0;
+
+  font-family: 'Source Sans Pro', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 14px;
+  color: #ffffff;
+  background: #374046;
+}
+
+.stay-center{
+  margin: 0 auto;
+}
+
+.center-flash{
+  width: 670px;
+  margin: 0 auto;
+}
+
+.center-flash h1{
+  margin: 50px auto 20px auto;
+}
+
+.flash-heading{
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.footer{
+  font-family: 'Dosis', sans-serif;
+  margin-top: 10px;
+}
+
+
+
+.btn, .btn-sm, .btn-md, .btn-lg{
+  border-radius: 2px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.same-size{
+  width: 160px;
+}
+
+.back-btn{
+  margin-bottom:  40px;
+}
+
+.back-btn .fa{
+  margin-right: 6px;
+}
+
+.btn-outline-secondary:hover{
+  color: #000;
+}
+
+.btn-primary, .btn-info, .btn-danger, .btn-default, .btn-success, .btn-blue, .btn-green, .btn-purple{
+  border-color: transparent;
+   /* box-shadow: 0 2px 5px 0 rgba(0,0,0,.26); */
+}
+
+.same-size .fa{
+  font-size: 21px;
+  margin-right: 5px;
+}
+
+.btn-purple{
+  color: #fff;
+  background-color: #673ab7;
+}
+
+.btn-purple:hover {
+  color: #fff;
+  background-color: #58319b;
+}
+
+.btn-blue{
+  color: #fff;
+  background-color: #2196f3;
+}
+
+.btn-blue:hover {
+  color: #fff;
+  background-color: #0961aa;
+}
+
+.btn-green{
+  color: #fff;
+  background-color: #009688;
+}
+
+.btn-green:hover {
+  color: #fff;
+  background-color: #00665c;
+}
+
+.btn-green-light{
+  color: #fff;
+  background-color: #22dd99;
+}
+
+.btn-green-light:hover {
+  color: #fff;
+  background-color: #1cb07a;
+}
+
+.btn-lg{
+  font-size: 1.0rem;
+  font-weight: bold;
+}
+
+.alert-danger, .alert-success, .alert-info, .alert-warning{
+  border-color: transparent;
+}
+
+.alert-success{
+  background-color: #99ffd6;
+}
+
+.alert-danger{
+  background-color: #ffb3c2;
+  color: #933b39;
+}
+
+.alert-info{
+  background-color: #86c5f9;
+}
+
+.alert{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+h1{
+  font-size: 34px;
+  font-weight: 300;
+}
+
+
+/* https://css-tricks.com/examples/hrs/ */
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #333, #282c34, #333);
+}

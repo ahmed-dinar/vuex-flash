@@ -6,11 +6,10 @@ Flash message component for Vue.js within Vuex
 </p>
 
 <p align="center">
-  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue.js-2.x-brightgreen.svg?style=flat-square&maxAge=604800" alt="Vue.js 2.x compatible"></a>
-  <a href="https://vuex.vuejs.org/en/"><img src="https://img.shields.io/badge/vuex-2.x-green.svg?style=flat-square&maxAge=604800" alt="Vuex 2.x compatible"></a>
+  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue.js-2.3.x-brightgreen.svg?style=flat-square&maxAge=604800" alt="Vue.js 2.x compatible"></a>
+  <a href="https://vuex.vuejs.org/en/"><img src="https://img.shields.io/badge/vuex-2.3.x-green.svg?style=flat-square&maxAge=604800" alt="Vuex 2.x compatible"></a>
   <a href="https://travis-ci.org/ahmed-dinar/vuex-flash"><img src="https://img.shields.io/travis/ahmed-dinar/vuex-flash.svg?style=flat-square" alt="travis-ci build"></a>
   <a href="https://coveralls.io/github/ahmed-dinar/vuex-flash?branch=master"><img src="https://img.shields.io/coveralls/ahmed-dinar/vuex-flash/master.svg?style=flat-square" alt="coveralls"></a>
-  <br>
   <a href="https://www.npmjs.com/package/vuex-flash"><img src="https://img.shields.io/npm/v/vuex-flash.svg?style=flat-square" alt="npm package"></a>
   <a href="https://david-dm.org/ahmed-dinar/vuex-flash"><img src="https://img.shields.io/david/ahmed-dinar/vuex-flash.svg?style=flat-square" alt="dependency"></a>
   <a href="https://david-dm.org/ahmed-dinar/vuex-flash#info=devDependencies"><img src="https://img.shields.io/david/dev/ahmed-dinar/vuex-flash.svg?style=flat-square&label=dev" alt="dev dependency"></a>
@@ -28,6 +27,9 @@ Flash message component for Vue.js within Vuex
 - **persist flash data in storage**
 - **highly customizable**
 
+### Demo
+
+#### [Live demo with code snippet](https://ahmed-dinar.github.io/vuex-flash)
 
 ### Install
 ```
@@ -187,19 +189,19 @@ If you choose to use [custom template](#custom-template), then you need to add t
 
 ### Custom Template
 
-- The default template can be found [here](https://github.com/ahmed-dinar/vuex-flash/blob/master/src/flash.js#L8-L31).
+- The default template can be found [here](https://github.com/ahmed-dinar/vuex-flash/blob/master/src/FlashComponent.js#L8-L31).
 - Put **`{{ message }}`** inside your template where you want to show the flash message.
 - Use **`v-if="show"`** to show the alert.
 - The **`cssClasses`** string data will be all classes including `variant class` and your `custom classes` that you provide
 in [options](#vueusevuexflash-options). Bind class **`:class="cssClasses"`**
 - Use **`closeFlash`** method to trigger the close button click.
-- **[Here is an example](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/src/bulma.js#L11)** that showing the implementation of custom template of [Bulma notification](http://bulma.io/documentation/elements/notification/)
+- **[Here is an example](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/bulma.js#L11)** that showing the implementation of custom template of [Bulma notification](http://bulma.io/documentation/elements/notification/)
 
 ### Persist Flash message
 
-- **[Here is an example](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/src/store/persist.js)** that shows how to persist vuex state in sessionStorage using [vuex-persistedstate](https://github.com/robinvdvleuten/vuex-persistedstate).
-- The [path](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/src/store/persist.js#L15) must be same as the [namespace](#createflashstoreoptions).
-- The [mutataion type](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/src/store/persist.js#L16) in filter must be same as the [config mutation key](#createflashstoreoptions)
+- **[Here is an example](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/store/persist.js)** that shows how to persist vuex state in sessionStorage using [vuex-persistedstate](https://github.com/robinvdvleuten/vuex-persistedstate).
+- The [path](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/store/persist.js#L15) must be same as the [namespace](#createflashstoreoptions).
+- The [mutataion type](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/store/persist.js#L16) in filter must be same as the [config mutation key](#createflashstoreoptions)
 
 ## API
 

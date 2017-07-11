@@ -1,7 +1,9 @@
 
 import FlashComponent from './FlashComponent';
+import { createFlashStore } from './FlashStore';
 
 export default {
+
   install(Vue, config = {}) {
 
     if( typeof config !== 'object' || Array.isArray(config) ){
@@ -28,4 +30,4 @@ export default {
   }
 };
 
-export { createFlashStore } from './FlashStore';
+export { createFlashStore, FlashComponent };

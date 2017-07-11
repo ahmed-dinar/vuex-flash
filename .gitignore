@@ -5,3 +5,5 @@ yarn-debug.log*
 yarn-error.log*
 test/unit/coverage
 selenium-debug.log
+docs/package-lock.json
+docs/node_modules/
