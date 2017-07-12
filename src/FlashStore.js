@@ -1,33 +1,29 @@
 
 
 
-export function createFlashStore(options = {}){
-
-  if( typeof options !== 'object' || Array.isArray(options) ){
-    throw new Error('[vuex-flash error] valid options object required');
-  }
-
-  //the vuex module will register under this name
-  const moduleName = options.namespace || 'FLASH';
-
-  //the vuex mutation name use to set flash message
-  const SET_FLASH = options.setter || 'SET_FLASH';
+export function createFlashStore(
+  {
+    //the vuex module will register under this name
+    namespace = 'FLASH',
+    //the vuex mutation name use to set flash message
+    setter = 'SET_FLASH',
+    //custom variant support
+    variants = []
+  } = {}
+){
 
   //the vuex mutation name use to clear flash message
   const CLEAR_FLASH = 'CLEAR_FLASH';
-
-  //custom variant support
-  var customVariants = (options.variants || []).map(k => ({ [k]: null }));
 
   const state = Object.assign({
     success: null,
     danger: null,
     info: null,
     warning: null
-  }, ...customVariants);
+  }, ...variants.map(k => ({ [k]: null })));
 
   const mutations = {
-    [SET_FLASH] (state, flash) {
+    [setter] (state, flash) {
       state[flash.variant] = flash.message;
     },
     [CLEAR_FLASH] (state, variant) {
@@ -47,7 +43,7 @@ export function createFlashStore(options = {}){
   };
 
   return store => {
-    store.registerModule(moduleName, {
+    store.registerModule(namespace, {
       namespaced: true,
       state,
       getters,

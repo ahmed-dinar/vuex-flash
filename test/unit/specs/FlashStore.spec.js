@@ -1,5 +1,4 @@
 
-import { createFlashStore } from '../../../src/FlashStore';
 import { getStore } from '../helpers';
 
 
@@ -11,13 +10,6 @@ const flashCleaner ='FLASH/CLEAR_FLASH';
 describe('FlashStore', function(){
 
   var store = getStore();
-
-  it('should throw error when invalid option given', function(done) {
-    expect(function () {
-      createFlashStore([]);
-    }).to.throw(Error);
-    done();
-  });
 
   it('should register plugin', function(done) {
     expect(store.getters[flashGetter]).to.not.be.undefined;

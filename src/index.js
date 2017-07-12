@@ -14,7 +14,6 @@ export default {
 
     /* istanbul ignore next */
     if( config.mixin ){
-
       const FLASH_METHOD = config.method || 'flash';
 
       Vue.mixin({

@@ -1,10 +1,8 @@
 /**
  * Copyright (C) 2017 Ahmed Dinar
- *
  */
 
 const defaultTemplate = `
-
 <transition
 :name="transitionName"
 :enter-active-class="transitionIn"
@@ -27,9 +25,7 @@ const defaultTemplate = `
     </button>
   {{ message }}
   </div>
-
 </transition>
-
 `;
 
 export default function(
@@ -64,9 +60,7 @@ export default function(
   }
 
   return {
-
     template,
-
     props: {
       variant: {
         type: String,
@@ -93,18 +87,14 @@ export default function(
         default: 'animated fadeOutUp'
       }
     },
-
     data(){
-
       return Object.assign({
         message: null,
         closed: false,
         _timeout: null
       }, { namespace, key, duration, storage, css, keep });
     },
-
     mounted() {
-
       let flashMsg = this.getFlash();
 
       if( flashMsg ){
@@ -115,63 +105,48 @@ export default function(
         }
       }
     },
-
     computed: {
-
       variantClass,
-
-
       cssClasses(){
-
         return this.css && Array.isArray(this.css)
           ? [ ...this.css, this.variantClass ]
           : [ 'alert', this.variantClass ];
       },
-
       show(){
         return ! this.closed && !! this.message;
       },
-
       cleaner(){
         return `${this.namespace}/CLEAR_FLASH`;
       }
     },
-
     methods: {
-
       clearPersisted,
-
       getter(name){
         return `${this.namespace}/${name}`;
       },
-
       getFlash(){
         return this.$store.getters[this.getter('getFlashMessage')](this.variant);
       },
-
       closeFlash(){
         this.closed = true;
         this.message = null;
+
         if (this._timeout){
           clearTimeout(this._timeout);
         }
       },
-
-      /**
-       * check if all flash messages have been flashed when use persist data and keep = false
-       * usefull when there are multiple flashes and have to clear persist storage every time
-       */
+      // check if all flash messages have been flashed when use persist data and keep = false
+      // usefull when there are multiple flashes and have to clear persist storage every time
       flashed(){
         return this.$store.getters[this.getter('flashed')];
       },
-
       clearFlash(){
         this.$store.commit(this.cleaner, this.variant);
+
         if( !this.keep && this.flashed() ){
           this.clearPersisted();
         }
       },
-
       autoClose(){
         this._timeout = setTimeout(() => {
           this.closeFlash();

@@ -40,7 +40,7 @@
 <style>
 
   #app{
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
 
 
@@ -49,14 +49,14 @@
   }
 
   .github-corner svg{
-    fill:#607d8b;
+    fill:#374046; /* 607d8b */
     color:#fff;
     position: absolute;
     top: 0;
     border: 0;
     right: 0;
+    z-index: 1000;
   }
-
 
   @keyframes octocat-wave{
     0%,100%{

@@ -2,8 +2,15 @@
 
   <div>
 
-    <div class="row">
-      <h1 :class="['text-center','flash-heading', animateMe ? 'animated swing' : '']">{{ message }}</h1>
+    <div class="row main-header">
+      <div class="container">
+        <h1 :class="['text-center','flash-heading', animateMe ? 'animated swing' : '']">
+        {{ message }}
+        </h1>
+        <p class="subtitle text-center">
+          <i class="material-icons">flash_on</i> {{ subtitle }} <i class="material-icons">flash_on</i>
+        </p>
+      </div>
     </div>
 
     <div class="row">
@@ -21,7 +28,7 @@
   }</code></pre>
 
   <pre v-highlightjs><code class="javascript">autoHide(){
-
+    import UIkit from 'uikit';
     this.flash({
       message: 'Will hide in a moment',
       variant: 'success'
@@ -110,6 +117,7 @@
     data(){
       return {
         message: 'Vuex Flash',
+        subtitle: 'Flash Message Component for Vue.js within Vuex',
         animateMe: false
       };
     },
@@ -119,7 +127,7 @@
       basic(){
         this.flash({ message: 'Basic flash, you can close or refresh the page.', variant: 'danger' });
         this.flash({ message: 'BULMA!', variant: 'bulma_success' });
-        this.flash({ message: 'UIKIT!', variant: 'uikit_success' });
+        this.flash({ message: 'UIKIT!', variant: 'uikit_primary' });
         this.$router.replace('/basic');
       },
 

@@ -35,6 +35,7 @@ function click(el){
 
 function getInstance(comp){
 
+  Vue.config.productionTip = false;
   Vue.component('FlashMessage', comp);
 
   return new Vue({
@@ -47,6 +48,7 @@ function getInstance(comp){
 
 function getPluginInstance(plugin, options){
 
+  Vue.config.productionTip = false;
   Vue.use(plugin, options);
 
   return new Vue({
@@ -60,6 +62,7 @@ function getPluginInstance(plugin, options){
 
 function getMixinInstance(config = {}, persist = false){
 
+  Vue.config.productionTip = false;
   return new Vue({
     router: getRouter(config),
     store: getStore(persist),

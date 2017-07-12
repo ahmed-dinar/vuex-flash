@@ -6,13 +6,13 @@ Flash message component for Vue.js within Vuex
 </p>
 
 <p align="center">
-  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue.js-2.3.x-brightgreen.svg?style=flat-square&maxAge=604800" alt="Vue.js 2.x compatible"></a>
+  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.3.x-brightgreen.svg?style=flat-square&maxAge=604800" alt="Vue.js 2.x compatible"></a>
   <a href="https://vuex.vuejs.org/en/"><img src="https://img.shields.io/badge/vuex-2.3.x-green.svg?style=flat-square&maxAge=604800" alt="Vuex 2.x compatible"></a>
   <a href="https://travis-ci.org/ahmed-dinar/vuex-flash"><img src="https://img.shields.io/travis/ahmed-dinar/vuex-flash.svg?style=flat-square" alt="travis-ci build"></a>
+  <a href="https://circleci.com/gh/ahmed-dinar/vuex-flash"><img src="https://img.shields.io/circleci/project/github/ahmed-dinar/vuex-flash.svg?style=flat-square&label=circleci" alt="circleci build"></a>
   <a href="https://coveralls.io/github/ahmed-dinar/vuex-flash?branch=master"><img src="https://img.shields.io/coveralls/ahmed-dinar/vuex-flash/master.svg?style=flat-square" alt="coveralls"></a>
   <a href="https://www.npmjs.com/package/vuex-flash"><img src="https://img.shields.io/npm/v/vuex-flash.svg?style=flat-square" alt="npm package"></a>
   <a href="https://david-dm.org/ahmed-dinar/vuex-flash"><img src="https://img.shields.io/david/ahmed-dinar/vuex-flash.svg?style=flat-square" alt="dependency"></a>
-  <a href="https://david-dm.org/ahmed-dinar/vuex-flash#info=devDependencies"><img src="https://img.shields.io/david/dev/ahmed-dinar/vuex-flash.svg?style=flat-square&label=dev" alt="dev dependency"></a>
   <a href="https://www.codacy.com/app/ahmed-dinar/vuex-flash?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ahmed-dinar/vuex-flash&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/8515c14218ec49c384b276fba758f983.svg?style=flat-square&label=codacy" alt="code quality"></a>
   <a href="https://github.com/ahmed-dinar/vuex-flash/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&maxAge=604800" alt="license"></a>
 </p>
@@ -27,7 +27,7 @@ Flash message component for Vue.js within Vuex
 - **persist flash data in storage**
 - **highly customizable**
 
-### Demo
+### Demo & Example
 
 #### [Live demo with code snippet](https://ahmed-dinar.github.io/vuex-flash)
 
@@ -189,7 +189,7 @@ If you choose to use [custom template](#custom-template), then you need to add t
 
 ### Custom Template
 
-- The default template can be found [here](https://github.com/ahmed-dinar/vuex-flash/blob/master/src/FlashComponent.js#L8-L31).
+- The default template can be found [here](https://github.com/ahmed-dinar/vuex-flash/blob/master/src/FlashComponent.js#L6-L28).
 - Put **`{{ message }}`** inside your template where you want to show the flash message.
 - Use **`v-if="show"`** to show the alert.
 - The **`cssClasses`** string data will be all classes including `variant class` and your `custom classes` that you provide
@@ -235,10 +235,12 @@ storage. `(default: sessionStorage)`
 [custom template](#custom-template). `(default: [])`
 
 - `variantClass [Function]` - A function returns a css class name to styling alert component based on current variant.
-.Can access the current variant using `this.variant`. ``(default: 'return `alert-${this.variant}`;')``
+.Can access the current variant using `this.variant`. [Do not use arrow function!](https://stackoverflow.com/a/28372106).<br>
+``(default: function(){ return `alert-${this.variant}`; })``
 
 - `clearPersisted [Function]` - A function used for clearing persisted data from storage.Can access the storage using
-`this.storage`. ``(default: this.storage.removeItem(this.key);)``
+`this.storage`. [Again, do not use arrow function!](https://stackoverflow.com/a/28372106).<br>
+``(default: function(){ this.storage.removeItem(this.key); })``
 
 
 ### `createFlashStore([options])`

@@ -10,7 +10,8 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js src test/unit/**/*.js test/e2e/**/*.js",
     "lint-fix": "eslint --fix --ext .js src test/unit/** test/e2e/**",
-    "coverall": "cat ./test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coverall": "cat ./test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "codecov": "cat ./test/unit/coverage/lcov.info | ./node_modules/.bin/codecov"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-runtime": "^6.23.0",
     "chai": "^4.0.2",
+    "codecov": "^2.2.0",
     "connect-history-api-fallback": "^1.3.0",
     "coveralls": "^2.13.1",
     "cross-env": "^5.0.1",

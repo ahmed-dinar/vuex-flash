@@ -74,6 +74,37 @@ export default{
         return `uk-alert-${this.variant.split('_')[1]}`;
       };
     }
+  },
+
+  semanticui: {
+    template(){
+      return `
+        <transition
+        :name="transitionName"
+        :enter-active-class="transitionIn"
+        :leave-active-class="transitionOut"
+        >
+
+          <div v-if="show"
+          :class="cssClasses"
+          >
+            <i v-if="!important"
+            @click.stop.prevent="closeFlash"
+            class="close icon"
+            ></i>
+            {{ message }}
+          </div>
+
+        </transition>`;
+    },
+    variants(){
+      return makeVariants('semanticui');
+    },
+    variantClass(){
+      return function(){
+        return this.variant.split('_')[1];
+      };
+    }
   }
 
 };

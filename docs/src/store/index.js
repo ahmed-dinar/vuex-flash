@@ -12,7 +12,8 @@ export default new Vuex.Store({
     createFlashStore({
       variants: [
         ...templates.bulma.variants(),
-        ...templates.uikit.variants()
+        ...templates.uikit.variants(),
+        'primary'
       ]
     })
   ]

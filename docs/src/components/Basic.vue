@@ -7,10 +7,10 @@
 
       <flash-message variant="danger"></flash-message>
       <bulma-flash variant="bulma_success"></bulma-flash>
-      <uikit-flash variant="uikit_success"></uikit-flash>
+      <uikit-flash variant="uikit_primary"></uikit-flash>
 
       <br><br>
-        <router-link class="btn btn-primary btn-sm back-btn" to="/">
+      <router-link class="btn btn-primary btn-sm back-btn" to="/">
         <i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back
       </router-link>
     </div>

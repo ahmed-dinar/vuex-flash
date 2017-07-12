@@ -59,6 +59,10 @@
   background: #fff1f0;
   color: #d85030;
 }
+.uk-alert-primary {
+  background: #d8eafc;
+  color: #1e87f0;
+}
 /* Modifier: `uk-alert-large`
  ========================================================================== */
 .uk-alert-large {

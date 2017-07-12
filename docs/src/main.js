@@ -12,10 +12,10 @@ import templates from './lib/templates';
 
 import 'nprogress/nprogress.css';
 import 'animate.css/animate.css';
-import 'highlight.js/styles/atom-one-dark.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'highlight.js/styles/xcode.css';
 import './assets/uikit-alert.css';
 import './assets/bulma-notification.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import './assets/style.css';
 
 Vue.config.productionTip = false;

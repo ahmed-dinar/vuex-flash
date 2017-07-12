@@ -29,7 +29,6 @@
 
       makeFlash(){
         this.flash({ message: 'I am the flash! B)', variant: 'danger' });
-        this.flash({ message: 'Bulma', variant: 'bulma_success' });
         this.$router.replace('/flash');
       },
 
