@@ -5,7 +5,7 @@
 
       <h1>{{ message }}</h1>
 
-      <flash-message variant="danger"></flash-message>
+      <custom-transition autoHide variant="success"></custom-transition>
 
       <br><br>
       <router-link class="btn btn-primary btn-sm back-btn" to="/">
@@ -29,10 +29,11 @@
 
     data(){
       return {
-        message: 'Simple flash message',
-        code: '<flash-message variant="danger"></flash-message>'
+        message: 'Custom Transition Fade',
+        code: '<flash-message autoHide variant="success"></flash-message>'
       };
     }
+
   };
 
 </script>

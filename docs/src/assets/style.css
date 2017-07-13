@@ -47,7 +47,6 @@ body {
 }
 
 .footer{
-  font-family: 'Dosis', sans-serif;
   margin-top: 10px;
 }
 
@@ -145,6 +144,11 @@ button{
   color: #933b39;
 }
 
+.alert-grey{
+  background-color: #9e9e9e;
+  color: #fff;
+}
+
 .alert-info{
   background-color: #86c5f9;
 }
@@ -157,6 +161,26 @@ button{
 h1{
   font-size: 34px;
   font-weight: 300;
+}
+
+h2{
+  font-size: 30px;
+}
+
+h3{
+  font-size: 24px;
+}
+
+h4{
+  font-size: 18px;
+}
+
+h5{
+  font-size: 14px;
+}
+
+h5{
+  font-size: 12px;
 }
 
 
@@ -173,6 +197,10 @@ h1{
   background: #f2f2f2;
 }
 
+.hljs-string{
+  color: #3da978;
+}
+
 .material-icons{
   vertical-align: middle;
 }
@@ -181,3 +209,11 @@ h1{
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}

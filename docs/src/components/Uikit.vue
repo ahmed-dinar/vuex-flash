@@ -5,7 +5,7 @@
 
       <h1>{{ message }}</h1>
 
-      <flash-message variant="danger"></flash-message>
+      <uikit-flash variant="uikit_danger"></uikit-flash>
 
       <br><br>
       <router-link class="btn btn-primary btn-sm back-btn" to="/">
@@ -29,10 +29,11 @@
 
     data(){
       return {
-        message: 'Simple flash message',
+        message: 'Bulma using custom template',
         code: '<flash-message variant="danger"></flash-message>'
       };
     }
+
   };
 
 </script>

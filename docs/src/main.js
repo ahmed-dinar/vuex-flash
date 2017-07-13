@@ -12,7 +12,7 @@ import templates from './lib/templates';
 
 import 'nprogress/nprogress.css';
 import 'animate.css/animate.css';
-import 'highlight.js/styles/xcode.css';
+import 'highlight.js/styles/github-gist.css';
 import './assets/uikit-alert.css';
 import './assets/bulma-notification.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -37,6 +37,15 @@ Vue.component('UikitFlash', FlashComponent({
   template: templates.uikit.template(),
   variantClass: templates.uikit.variantClass(),
   css: ['uk-alert']
+}));
+
+
+Vue.component('CustomTransition', FlashComponent({
+  template: templates.transition.custom
+}));
+
+Vue.component('NoTransition', FlashComponent({
+  template: templates.transition.none
 }));
 
 

@@ -15,6 +15,7 @@ export function createFlashStore(
   //the vuex mutation name use to clear flash message
   const CLEAR_FLASH = 'CLEAR_FLASH';
 
+  //merge custom variants with default
   const state = Object.assign({
     success: null,
     danger: null,

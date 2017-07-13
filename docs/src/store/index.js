@@ -13,9 +13,9 @@ export default new Vuex.Store({
       variants: [
         ...templates.bulma.variants(),
         ...templates.uikit.variants(),
-        'primary'
+        'primary',
+        'grey'
       ]
     })
   ]
-
 });

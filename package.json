@@ -1,6 +1,6 @@
 {
   "name": "vuex-flash",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Flash Message Component for Vue.js within Vuex",
   "main": "dist/vuex-flash.min.js",
   "scripts": {

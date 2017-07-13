@@ -17,15 +17,12 @@ Flash message component for Vue.js within Vuex
   <a href="https://github.com/ahmed-dinar/vuex-flash/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&maxAge=604800" alt="license"></a>
 </p>
 
-## :surfer: Coming soon
-#### npm package will be available soon with proper documentation and demo
-
 ### Features
 
-- **multiple flash**
-- **custom template**
-- **persist flash data in storage**
-- **highly customizable**
+- [**multiple flash**](#multiple-flash)
+- [**custom template**](#custom-template)
+- [**persist flash data in storage**](#persist-flash-message)
+- [**highly customizable**](#api)
 
 ### Demo & Example
 
@@ -38,7 +35,7 @@ $ npm install --save vuex-flash
 
 ### Usage
 
-register component:
+**register component:**
 ```javascript
 //main.js
 
@@ -47,7 +44,8 @@ import VuexFlash from 'vuex-flash';
 
 Vue.use(VuexFlash);
 ```
-register vuex store:
+
+**register vuex store:**
 ```javascript
 //store.js
 
@@ -161,7 +159,7 @@ this.$router.push('/somepage'); //redirect to /somepage
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 ```
 
-**If you are not interested to use bootstrap, use [custom template](#custom-template) instead for styling your own alert.**
+**You can always use your own alert using [custom template](#custom-template).**
 
 #### Variant
 The Default variant types are:
@@ -199,9 +197,9 @@ in [options](#vueusevuexflash-options). Bind class **`:class="cssClasses"`**
 
 ### Persist Flash message
 
-- **[Here is an example](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/store/persist.js)** that shows how to persist vuex state in sessionStorage using [vuex-persistedstate](https://github.com/robinvdvleuten/vuex-persistedstate).
+- **[Here is an example](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/persist.js)** that shows how to persist vuex state in sessionStorage using [vuex-persistedstate](https://github.com/robinvdvleuten/vuex-persistedstate).
 - The [path](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/store/persist.js#L15) must be same as the [namespace](#createflashstoreoptions).
-- The [mutataion type](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/store/persist.js#L16) in filter must be same as the [config mutation key](#createflashstoreoptions)
+- The [mutataion type](https://github.com/ahmed-dinar/vuex-flash/blob/master/example/store/persist.js#L19) in filter must be same as the [config mutation key](#createflashstoreoptions)
 
 ## API
 
@@ -216,15 +214,15 @@ The following options are available to configure the component plugin:
 - `method [String]` - If `mixin` is set true and this option is given, then global mixin method  will [register](#using-global-mixin) under this name. `(default: 'flash')`
 
 - `namespace` - [String] -  The namespace is the name used for creating vuex flash module.This should be same as the [`createFlashStore` namespace](#createflashstoreoptions).
-this namespace used for commiting mutation to [set](#using-mutation) and clear flash data. If changed, the [mutation type](#using-mutation) will be
+this namespace used for commiting mutation to [set](#using-mutation) and clear flash data. If provided, the [mutation type](#using-mutation) will be
 `'{namespace}/SET_FLASH'`. `(default: 'FLASH')`
 
 - `duration [Number]` - The flash message display duration (in milliseconds) for auto hide flashes. `(default: 3000)`
 
 - `template [String]` - The template to use showing alert. See [custom template](#custom-template).
 
-- `keep [Boolean]` - If false and data is persisted in storage, the storage will cleared after displaying alert every time. 
-if true, the storage will keep with null value. `(default: true)`
+- `keep [Boolean]` - If false and data is persisted in storage, the storage will cleared after displaying alert every time.
+if provided, the storage will keep with null value. `(default: true)`
 
 - `storage [Storage]` - The Storage where the data is persisted. If `keep` is set to false, the data will be cleared from this
 storage. `(default: sessionStorage)`
@@ -235,11 +233,11 @@ storage. `(default: sessionStorage)`
 [custom template](#custom-template). `(default: [])`
 
 - `variantClass [Function]` - A function returns a css class name to styling alert component based on current variant.
-.Can access the current variant using `this.variant`. [Do not use arrow function!](https://stackoverflow.com/a/28372106).<br>
+.Can access the current variant using `this.variant`. [Do not use arrow function](https://stackoverflow.com/a/28372106).<br>
 ``(default: function(){ return `alert-${this.variant}`; })``
 
-- `clearPersisted [Function]` - A function used for clearing persisted data from storage.Can access the storage using
-`this.storage`. [Again, do not use arrow function!](https://stackoverflow.com/a/28372106).<br>
+- `clearPersisted [Function]` - A function used for clearing persisted data from storage when `keep` is set to false.Can access the storage using
+`this.storage`. [Do not use arrow function](https://stackoverflow.com/a/28372106).<br>
 ``(default: function(){ this.storage.removeItem(this.key); })``
 
 
@@ -249,10 +247,10 @@ The following options are available to configure the vuex store plugin:
 
 - `namespace [String]` - This namespace is the name used for registering the vuex-flash store module. `(default: 'FLASH')`
 
-- `setter [String]` - This is the `mutation name` of flash message setter.If changed, the [mutation key](#using-mutation) will be
+- `setter [String]` - This is the `mutation name` of flash message setter.If provided, the [mutation key](#using-mutation) will be
 `'${namespace}/${setter}'`. `(default: 'SET_FLASH')`
 
-- `variants [Array]` - An array of Custom [variants](#variant) to use as state. `(default: [])`
+- `variants [Array]` - An array of Custom variants to use as state.Will be merged with [default variants](#variant). `(default: [])`
 
 ### License
 [MIT](http://opensource.org/licenses/MIT)

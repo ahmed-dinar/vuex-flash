@@ -5,7 +5,7 @@
 
       <h1>{{ message }}</h1>
 
-      <flash-message variant="danger"></flash-message>
+      <bulma-flash variant="bulma_success"></bulma-flash>
 
       <br><br>
       <router-link class="btn btn-primary btn-sm back-btn" to="/">
@@ -29,8 +29,8 @@
 
     data(){
       return {
-        message: 'Simple flash message',
-        code: '<flash-message variant="danger"></flash-message>'
+        message: 'Bulma using custom template',
+        code: '<flash-message variant="success"></flash-message>'
       };
     }
   };

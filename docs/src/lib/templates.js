@@ -24,11 +24,8 @@ export default{
             @click.stop.prevent="closeFlash"
             >
             </button>
-
             {{ message }}
-
           </div>
-
         </transition>`;
     },
     variants(){
@@ -76,35 +73,35 @@ export default{
     }
   },
 
-  semanticui: {
-    template(){
-      return `
-        <transition
-        :name="transitionName"
-        :enter-active-class="transitionIn"
-        :leave-active-class="transitionOut"
+  transition: {
+
+    custom: `
+      <transition name="fade">
+        <div v-if="show"
+        :class="cssClasses"
         >
-
-          <div v-if="show"
-          :class="cssClasses"
+          <button v-if="!important"
+          class="close"
+          @click.stop.prevent="closeFlash"
           >
-            <i v-if="!important"
-            @click.stop.prevent="closeFlash"
-            class="close icon"
-            ></i>
-            {{ message }}
-          </div>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        {{ message }}
+        </div>
+      </transition>`,
 
-        </transition>`;
-    },
-    variants(){
-      return makeVariants('semanticui');
-    },
-    variantClass(){
-      return function(){
-        return this.variant.split('_')[1];
-      };
-    }
+    none: `
+        <div v-if="show"
+        :class="cssClasses"
+        >
+          <button v-if="!important"
+          class="close"
+          @click.stop.prevent="closeFlash"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        {{ message }}
+        </div>`
   }
 
 };
