@@ -12,9 +12,6 @@
           <a style="margin-right: 5px;" href="https://github.com/ahmed-dinar/vuex-flash#install" target="_blank">
             <img src="https://img.shields.io/badge/docs--green.svg?style=social&maxAge=2592000" alt="documentation">
           </a>
-          <a href="https://github.com/ahmed-dinar/vuex-flash" target="_blank">
-            <img src="https://img.shields.io/github/stars/ahmed-dinar/vuex-flash.svg?style=social&label=Star&maxAge=2592000" alt="github">
-          </a>
         </p>
       </div>
     </div>
